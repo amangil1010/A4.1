@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+
+    <style>
+
+        .divP{
+
+            margin-left: 25px;
+            margin-right: 25px;
+            background-color: rgb(232, 195, 158);
+
+        }
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            .divP {
+                margin-left: 25px;
+                margin-right: 25px;
+                background-color: rgb(232, 116, 0);
+            }
+        }
+
+        /* Estilo para Google Chrome */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            .divP {
+                margin-left: 25px;
+                margin-right: 25px;
+                background-color: rgb(232, 195, 158);
+            }
+        }
+
+        /* Estilo para Firefox */
+        @-moz-document url-prefix() {
+            .div {
+                margin-left: 25px;
+                margin-right: 25px;
+                background-color: rgb(190, 218, 29);
+            }
+        }
+
+
+        .divS{
+
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+
+        }
+        .border{
+            border: 2px solid black;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .cambio{
+            background-color: aliceblue;
+        }
+
+        .cambio:hover{
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        .boton{
+            background-color: rgb(255, 255, 255);
+            width: 100px;
+            height: 50px;
+
+
+        }
+
+        .boton:active{
+            background-color: aqua;
+
+        }
+
+        dialog {
+        background-color: lightgray;
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+        padding: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form action="">
+        
+        <div class="divP">
+
+            <h2>Formulario</h2>
+
+            <div class="divS">
+
+                <div class="border">
+                    <div>
+                        <label for="">Nombre</label>
+                        <input for="name" class="cambio" type="text" required>
+
+                        <label for="" style="margin-left: 50px;">Apellidos</label>
+                        <input type="text" class="cambio" required>
+
+                        <label for="" style="margin-left: 125px;">Gmail</label>
+                        <input class="cambio" type="email" required>
+
+                        <label for="" style="margin-left: 150px;">Edad:</label>
+                        <input class="cambio" type="number" size="6" name="age" min="18" max="99" value="21"><br>
+
+
+                    </div>
+                </div>
+
+            <br><br>
+
+            <div class="border">
+                <legend>Estado Civil:</legend>
+                <a>S</a><input class="cambio" type="checkbox"> 
+                <a>C</a><input type="checkbox">
+            </div>
+
+            <br><br>
+            
+            <div class="border">
+                <label for="">Hijos:</label>
+                <select name="" id="" class="cambio">
+                    <option value="">0</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">+3</option>
+                </select>
+            
+            </div>
+            
+            <br><br>
+            
+            <div class="border">
+                <label for="">Fecha Nacimiento:</label>
+                <input type="date" required class="cambio">
+            </div>
+            <br><br>
+            <div class="border" >
+
+                <label for="">Trabaja:</label><br>                
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Si</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">No</label><br>
+                <br>
+                <label for="">Experiencia Laboral: </label><br>
+                <input type="range" size="2" name="Experiencia" min="1" max="2" value="1">
+
+                <details>
+                    <summary>Contacto</summary>
+                    <p>amangil1010@g.educaand.es</p>
+                </details>
+
+            </div>
+
+            <br><br>
+            
+            <button class="boton" type="submit">Enviar</button>
+            <button type="button"  class="boton" onclick="mostrarDialog()">Cerrar</button>
+
+
+        </div>
+            <footer style="margin-top: 25px;">
+
+           </footer>
+        </div>
+
+    </form>
+    
+    <dialog id="mi-dialogo">
+        <h2></h2>
+        <p></p>
+        <button type="button" onclick="cerrarDialog()">Cerrar</button>
+    </dialog>
+
+    <script>
+        const miDialogo = document.querySelector('#mi-dialogo');
+
+        function mostrarDialog() {
+        miDialogo.showModal();
+        }
+
+        function cerrarDialog() {
+        miDialogo.close();
+        }
+    </script>
+
+</body>
+</html>
